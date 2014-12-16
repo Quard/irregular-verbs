@@ -62,12 +62,12 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Irregular Verbs</a>
+                    <a class="navbar-brand" href="#">Irregular Verbs ({{$route.current.controller}})</a>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li><a href="/">Words</a></li>
-                        <li><a href="training/">Traiging</a/></li>
+                        <li ng-class="{active: $route.current.controller == 'CollectionController'}"><a href="/">Words</a></li>
+                        <li ng-class="{active: $route.current.controller == 'TrainingController'};"><a href="training/">Traiging</a/></li>
                     </ul>
                 </div>
             </div>
