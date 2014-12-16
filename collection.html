@@ -1,0 +1,32 @@
+<div class="btn-group" role="group">
+	<button ng-click="addRow()" class="btn btn-info">add word</button>
+	<button ng-click="save()" class="btn btn-success">save</button>
+	<a href="training/" class="btn btn-warning">start trainging</a>
+</div>
+
+<table class="table">
+<thead>
+	<tr>
+		<th>use</th>
+		<th>translation</th>
+		<th>infinitive</th>
+		<th>past simple</th>
+		<th>past participle</th>
+	</tr>
+</thead>
+<tbody>
+	<tr ng-repeat="word in words">
+		<td><input type="checkbox" ng-model="word[4]"></td>
+		<td><input ng-model="word[0]" class="form-control"></td>
+		<td><input ng-model="word[1]" class="form-control"></td>
+		<td><input ng-model="word[2]" class="form-control"></td>
+		<td><input ng-model="word[3]" class="form-control"></td>
+	</tr>
+</tbody>
+</table>
+
+<div class="btn-group" role="group">
+	<button ng-click="addRow()" class="btn btn-info">add word</button>
+	<button ng-click="save()" class="btn btn-success">save</button>
+	<a href="training/" class="btn btn-warning">start trainging</a>
+</div>

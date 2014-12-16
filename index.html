@@ -1,0 +1,83 @@
+<!doctype html>
+<html ng-app="IrregularVerbsApp">
+<head>
+    <title>Irregular Verbs</title>
+    <base href="/">
+    <link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <script src="js/angular-1.3.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script>
+        window.words = [
+            ['Быть', 'be', 'was', 'been'],
+            ['Становится', 'become', 'became', 'become'],
+            ['Начинать', 'begin', 'began', 'begun'],
+            ['Делать ставки', 'bet', 'bet', 'bet'],
+            ['Дуть', 'blow', 'blew', 'blown'],
+            ['Ломать', 'break', 'broke', 'broken'],
+            ['Приносить', 'bring', 'brought', 'brought'],
+            ['Строить', 'build', 'built', 'build'],
+            ['Покупать', 'buy', 'bought', 'bought'],
+            ['Быть в состоянии', 'can', 'could', 'been able'],
+            ['Ловить', 'catch', 'caught', 'caught'],
+            ['Выбирать', 'choose', 'chose', 'chosen'],
+            ['Приходить', 'come', 'came', 'come'],
+            ['Цена', 'cost', 'cost', 'cost'],
+            ['Резать', 'cut', 'cut', 'cut'],
+            ['Делать', 'do', 'did', 'done'],
+            ['Рисовать', 'draw', 'drew', 'drawn'],
+            ['Пить', 'drink', 'drank', 'drunk'],
+            ['Ехать', 'drive', 'drove', 'driven'],
+            ['Есть', 'eat', 'ate', 'eaten'],
+            ['Падать', 'fall', 'fell', 'fallen'],
+            ['Кормить', 'feed', 'fed', 'fed'],
+            ['Чувствовать', 'feel', 'fell', 'fallen'],
+            ['Искать', 'find', 'found', 'found'],
+            ['Лететь', 'fly', 'flew', 'flown'],
+            ['Забывать', 'forget', 'forgot', 'forgotten'],
+            ['Получать', 'get', 'got', 'got'],
+            ['Давать', 'give', 'gave', 'given'],
+            ['Идти', 'go', 'went', 'been/gone'],
+            ['Расти', 'grow', 'grew', 'grown'],
+            ['Иметь', 'have', 'had', 'had'],
+            ['Слышать', 'hear', 'heard', 'heard'],
+            ['Прятать', 'hide', 'hid', 'hidden'],
+            ['Ударять', 'hit', 'hit', 'hit'],
+            ['Держать', 'hold', 'held', 'held'],
+            ['Хранить', 'keep', 'kept', 'kept'],
+            ['Знать', 'know', 'knew', 'known'],
+            ['Учить', 'learn', 'learned/learnt', 'learned/learnt'],
+            ['Покидать', 'leave', 'left', 'left'],
+            ['Давать в займы', 'lend', 'lent', 'lent'],
+            ['Позволять', 'let', 'let', 'let'],
+            ['Терять', 'lose', 'lost', 'lost'],
+            ['Делать', 'make', 'made', 'made'],
+            ['Встречать', 'meet', 'met', 'met']
+        ];
+    </script>
+    <script src="js/controller.js"></script>
+</head>
+<body ng-controller="MainController">
+    <div class="container">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Irregular Verbs</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">Words</a></li>
+                        <li><a href="training/">Traiging</a/></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="classroom" ng-view>
+
+        </div>
+        <div class="text-right">
+            by <a href="http://zakovinko.com/">Vadym Zakovinko</a> 2014
+        </div>
+    </div>
+</body>
+</html>

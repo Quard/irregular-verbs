@@ -1,0 +1,31 @@
+<form class="form-inline">
+    <div class="jumbotron">
+        <h1 ng-bind="currentWord[0]"></h1>
+        <p>
+            <div class="form-group">
+                <label class="sr-only" for="verb-first">infinitive</label>
+                <input type="text" ng-model="verbs.first" class="form-control" id="verb-first" placeholder="infinitive">
+                <div ng-if="showAnswerMode" ng-bind="currentWord[1]" class="alert alert-success"></div>
+            </div>
+            <div class="form-group">
+                <label class="sr-only" for="verb-second">past simple</label>
+                <input type="text" ng-model="verbs.second" class="form-control" id="verb-second" placeholder="past simple">
+                <div ng-if="showAnswerMode" ng-bind="currentWord[2]" class="alert alert-success"></div>
+            </div>
+            <div class="form-group">
+                <label class="sr-only" for="verb-third">past participle</label>
+                <input type="text" ng-model="verbs.third" class="form-control" id="verb-third" placeholder="past participle">
+                <div ng-if="showAnswerMode" ng-bind="currentWord[3]" class="alert alert-success"></div>
+            </div>
+        </p>
+        <p ng-if="!showAnswerMode">
+            <input type="button" ng-click="showAnswers()" value="Show answer" class="btn btn-info">
+            <input type="submit" ng-click="check()" value="Check" class="btn btn-success">
+            <span ng-if="lastCheckCorrect">Correct</span>
+            <span ng-if="lastCheckIncorrect">Inorrect</span>
+        </p>
+        <p ng-if="showAnswerMode">
+            <input type="button" ng-click="nextWord()" value="Next word" class="btn btn-info">
+        </p>
+    </div>
+</form>

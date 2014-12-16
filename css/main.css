@@ -1,0 +1,7 @@
+classroom input.true {
+    border-color: green;
+}
+classroom input.false {
+    border-color: red;
+}
+classroom input.ng-dirty {}
