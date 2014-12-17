@@ -1,21 +1,21 @@
-<form class="form-inline">
+<form class="form-inline" ng-if="!finishMode">
     <div class="jumbotron">
-        <h1 ng-bind="currentWord[0]"></h1>
+        <h1 ng-bind="currentWord.translation"></h1>
         <p>
             <div class="form-group">
-                <label class="sr-only" for="verb-first">infinitive</label>
-                <input type="text" ng-model="verbs.first" class="form-control" id="verb-first" placeholder="infinitive">
-                <div ng-if="showAnswerMode" ng-bind="currentWord[1]" class="alert alert-success"></div>
+                <label class="sr-only" for="verb-infinitive">infinitive</label>
+                <input type="text" ng-model="answer.infinitive" class="form-control" id="verb-infinitive" placeholder="infinitive">
+                <div ng-if="showAnswerMode" ng-bind="currentWord.infinitive" class="alert alert-success"></div>
             </div>
             <div class="form-group">
-                <label class="sr-only" for="verb-second">past simple</label>
-                <input type="text" ng-model="verbs.second" class="form-control" id="verb-second" placeholder="past simple">
-                <div ng-if="showAnswerMode" ng-bind="currentWord[2]" class="alert alert-success"></div>
+                <label class="sr-only" for="verb-pastSimple">past simple</label>
+                <input type="text" ng-model="answer.pastSimple" class="form-control" id="verb-pastSimple" placeholder="past simple">
+                <div ng-if="showAnswerMode" ng-bind="currentWord.pastSimple" class="alert alert-success"></div>
             </div>
             <div class="form-group">
-                <label class="sr-only" for="verb-third">past participle</label>
-                <input type="text" ng-model="verbs.third" class="form-control" id="verb-third" placeholder="past participle">
-                <div ng-if="showAnswerMode" ng-bind="currentWord[3]" class="alert alert-success"></div>
+                <label class="sr-only" for="verb-pastParticiple">past participle</label>
+                <input type="text" ng-model="answer.pastParticiple" class="form-control" id="verb-pastParticiple" placeholder="past participle">
+                <div ng-if="showAnswerMode" ng-bind="currentWord.pastParticiple" class="alert alert-success"></div>
             </div>
         </p>
         <p ng-if="!showAnswerMode">
@@ -29,3 +29,28 @@
         </p>
     </div>
 </form>
+
+<div ng-if="finishMode">
+    <div class="col-md-4">
+        <div><b>Right answers:</b>&nbsp;{{ statisticSummary.rightPersent }}%</div>
+
+        <hr>
+        <button ng-click="start()" class="btn btn-success">Try again</button>
+    </div>
+    <div class="col-md-8">
+        <table class="table">
+        <thead>
+            <tr>
+                <th>Word</th>
+                <th>Answer</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="(word, status) in statistics">
+                <td ng-bind="word"></td>
+                <td ng-bind="status ? 'Yes' : 'No'"></td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>

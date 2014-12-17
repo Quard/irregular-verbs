@@ -5,54 +5,55 @@
     <base href="/">
     <link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="css/main.css" rel="stylesheet" type="text/css">
+    <script src="js/underscore-min.js"></script>
     <script src="js/angular-1.3.js"></script>
     <script src="js/angular-route.min.js"></script>
     <script>
         window.words = [
-            ['Быть', 'be', 'was', 'been'],
-            ['Становится', 'become', 'became', 'become'],
-            ['Начинать', 'begin', 'began', 'begun'],
-            ['Делать ставки', 'bet', 'bet', 'bet'],
-            ['Дуть', 'blow', 'blew', 'blown'],
-            ['Ломать', 'break', 'broke', 'broken'],
-            ['Приносить', 'bring', 'brought', 'brought'],
-            ['Строить', 'build', 'built', 'build'],
-            ['Покупать', 'buy', 'bought', 'bought'],
+            {translation: 'Быть', infinitive: 'be', pastSimple: 'was', pastParticiple: 'been', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Становится', infinitive: 'become', pastSimple: 'became', pastParticiple: 'become', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Начинать', infinitive: 'begin', pastSimple: 'began', pastParticiple: 'begun', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Делать ставки', infinitive: 'bet', pastSimple: 'bet', pastParticiple: 'bet', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Дуть', infinitive: 'blow', pastSimple: 'blew', pastParticiple: 'blown', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Ломать', infinitive: 'break', pastSimple: 'broke', pastParticiple: 'broken', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Приносить', infinitive: 'bring', pastSimple: 'brought', pastParticiple: 'brought', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Строить', infinitive: 'build', pastSimple: 'built', pastParticiple: 'build', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Покупать', infinitive: 'buy', pastSimple: 'bought', pastParticiple: 'bought', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
             ['Быть в состоянии', 'can', 'could', 'been able'],
-            ['Ловить', 'catch', 'caught', 'caught'],
-            ['Выбирать', 'choose', 'chose', 'chosen'],
-            ['Приходить', 'come', 'came', 'come'],
-            ['Цена', 'cost', 'cost', 'cost'],
-            ['Резать', 'cut', 'cut', 'cut'],
-            ['Делать', 'do', 'did', 'done'],
-            ['Рисовать', 'draw', 'drew', 'drawn'],
-            ['Пить', 'drink', 'drank', 'drunk'],
-            ['Ехать', 'drive', 'drove', 'driven'],
-            ['Есть', 'eat', 'ate', 'eaten'],
-            ['Падать', 'fall', 'fell', 'fallen'],
-            ['Кормить', 'feed', 'fed', 'fed'],
-            ['Чувствовать', 'feel', 'fell', 'fallen'],
-            ['Искать', 'find', 'found', 'found'],
-            ['Лететь', 'fly', 'flew', 'flown'],
-            ['Забывать', 'forget', 'forgot', 'forgotten'],
-            ['Получать', 'get', 'got', 'got'],
-            ['Давать', 'give', 'gave', 'given'],
-            ['Идти', 'go', 'went', 'been/gone'],
-            ['Расти', 'grow', 'grew', 'grown'],
-            ['Иметь', 'have', 'had', 'had'],
-            ['Слышать', 'hear', 'heard', 'heard'],
-            ['Прятать', 'hide', 'hid', 'hidden'],
-            ['Ударять', 'hit', 'hit', 'hit'],
-            ['Держать', 'hold', 'held', 'held'],
-            ['Хранить', 'keep', 'kept', 'kept'],
-            ['Знать', 'know', 'knew', 'known'],
-            ['Учить', 'learn', 'learned/learnt', 'learned/learnt'],
-            ['Покидать', 'leave', 'left', 'left'],
-            ['Давать в займы', 'lend', 'lent', 'lent'],
-            ['Позволять', 'let', 'let', 'let'],
-            ['Терять', 'lose', 'lost', 'lost'],
-            ['Делать', 'make', 'made', 'made'],
-            ['Встречать', 'meet', 'met', 'met']
+            {translation: 'Ловить', infinitive: 'catch', pastSimple: 'caught', pastParticiple: 'caught', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Выбирать', infinitive: 'choose', pastSimple: 'chose', pastParticiple: 'chosen', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Приходить', infinitive: 'come', pastSimple: 'came', pastParticiple: 'come', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Цена', infinitive: 'cost', pastSimple: 'cost', pastParticiple: 'cost', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Резать', infinitive: 'cut', pastSimple: 'cut', pastParticiple: 'cut', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Делать', infinitive: 'do', pastSimple: 'did', pastParticiple: 'done', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Рисовать', infinitive: 'draw', pastSimple: 'drew', pastParticiple: 'drawn', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Пить', infinitive: 'drink', pastSimple: 'drank', pastParticiple: 'drunk', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Ехать', infinitive: 'drive', pastSimple: 'drove', pastParticiple: 'driven', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Есть', infinitive: 'eat', pastSimple: 'ate', pastParticiple: 'eaten', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Падать', infinitive: 'fall', pastSimple: 'fell', pastParticiple: 'fallen', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Кормить', infinitive: 'feed', pastSimple: 'fed', pastParticiple: 'fed', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Чувствовать', infinitive: 'feel', pastSimple: 'fell', pastParticiple: 'fallen', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Искать', infinitive: 'find', pastSimple: 'found', pastParticiple: 'found', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Лететь', infinitive: 'fly', pastSimple: 'flew', pastParticiple: 'flown', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Забывать', infinitive: 'forget', pastSimple: 'forgot', pastParticiple: 'forgotten', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Получать', infinitive: 'get', pastSimple: 'got', pastParticiple: 'got', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Давать', infinitive: 'give', pastSimple: 'gave', pastParticiple: 'given', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Идти', infinitive: 'go', pastSimple: 'went', pastParticiple: 'been/gone', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Расти', infinitive: 'grow', pastSimple: 'grew', pastParticiple: 'grown', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Иметь', infinitive: 'have', pastSimple: 'had', pastParticiple: 'had', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Слышать', infinitive: 'hear', pastSimple: 'heard', pastParticiple: 'heard', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Прятать', infinitive: 'hide', pastSimple: 'hid', pastParticiple: 'hidden', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Ударять', infinitive: 'hit', pastSimple: 'hit', pastParticiple: 'hit', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Держать', infinitive: 'hold', pastSimple: 'held', pastParticiple: 'held', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Хранить', infinitive: 'keep', pastSimple: 'kept', pastParticiple: 'kept', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Знать', infinitive: 'know', pastSimple: 'knew', pastParticiple: 'known', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Учить', infinitive: 'learn', pastSimple: 'learned/learnt', pastParticiple: 'learned/learnt', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Покидать', infinitive: 'leave', pastSimple: 'left', pastParticiple: 'left', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Давать в займы', infinitive: 'lend', pastSimple: 'lent', pastParticiple: 'lent', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Позволять', infinitive: 'let', pastSimple: 'let', pastParticiple: 'let', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Терять', infinitive: 'lose', pastSimple: 'lost', pastParticiple: 'lost', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Делать', infinitive: 'make', pastSimple: 'made', pastParticiple: 'made', useInTraining: false, cntShows: 0, cntRightAnswers: 0},
+            {translation: 'Встречать', infinitive: 'meet', pastSimple: 'met', pastParticiple: 'met', useInTraining: false, cntShows: 0, cntRightAnswers: 0}
         ];
     </script>
     <script src="js/controller.js"></script>
@@ -62,7 +63,7 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Irregular Verbs ({{$route.current.controller}})</a>
+                    <a class="navbar-brand" href="#">Irregular Verbs</a>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">

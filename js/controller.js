@@ -35,31 +35,41 @@ angular
 
         var next = function(){
             $scope.showAnswerMode = false;
-            $scope.verbs.first = '';
-            $scope.verbs.second = '';
-            $scope.verbs.third = '';
+            $scope.answer = {infinitive: '', pastSimple: '', pastParticiple: ''};
             if ($scope.words.length > 0) {
                 $scope.currentWord = $scope.words.shift();
+                $scope.statistics[$scope.currentWord.translation] = false;
             } else {
-                alert('Good, start again');
-                $scope.words = getWords();
+                $scope.statisticSummary = {
+                    count: _.keys($scope.statistics).length,
+                    rightCount: _.filter($scope.statistics, function(value, key) { return value === true; }).length
+                };
+                $scope.statisticSummary.rightPersent = $scope.statisticSummary.rightCount / $scope.statisticSummary.count * 100;
+                $scope.finishMode = true;
             }
-            document.querySelectorAll('.classroom input')[0].focus()
+            document.querySelectorAll('.classroom input')[0].focus();
         };
 
-        $scope.words = getWords();
-        $scope.currentWord = $scope.words.shift();
-        $scope.lastCheckCorrect = false;
-        $scope.lastCheckIncorrect = false;
-        $scope.showAnswerMode = false;
+        $scope.start = function(){
+            $scope.words = getWords();
+            $scope.statistics = {};
+            $scope.currentWord = $scope.words.shift();
+            $scope.answer = {infinitive: '', pastSimple: '', pastParticiple: ''};
+            $scope.lastCheckCorrect = false;
+            $scope.lastCheckIncorrect = false;
+            $scope.showAnswerMode = false;
+            $scope.finishMode = false;
+        };
+        $scope.start();
 
         $scope.check = function(){
-            $scope.firstStatus = String($scope.verbs.first == $scope.currentWord[1]);
-            $scope.secondStatus = $scope.verbs.second == $scope.currentWord[2] ? 'true' : 'false';
-            $scope.thirdStatus = $scope.verbs.third == $scope.currentWord[3];
+            $scope.infinitiveStatus = $scope.answer.infinitive == $scope.currentWord.infinitive;
+            $scope.pastSimpleStatus = $scope.answer.pastSimple == $scope.currentWord.pastSimple;
+            $scope.pastSimpleStatus = $scope.answer.pastParticiple == $scope.currentWord.pastParticiple;
 
-            if ($scope.firstStatus && $scope.secondStatus && $scope.thirdStatus) {
+            if ($scope.infinitiveStatus && $scope.pastSimpleStatus && $scope.pastSimpleStatus) {
                 $scope.lastCheckCorrect = true;
+                $scope.statistics[$scope.currentWord.translation] = true;
                 next();
             } else {
                 $scope.lastCheckIncorrect = true;
@@ -76,7 +86,7 @@ angular
             next();
         };
 
-        $scope.$watchCollection('verbs', function(){
+        $scope.$watchCollection('answer', function(){
             $scope.lastCheckCorrect = false;
             $scope.lastCheckIncorrect = false;
         });
