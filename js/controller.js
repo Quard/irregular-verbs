@@ -44,7 +44,7 @@ angular
                     count: _.keys($scope.statistics).length,
                     rightCount: _.filter($scope.statistics, function(value, key) { return value === true; }).length
                 };
-                $scope.statisticSummary.rightPersent = $scope.statisticSummary.rightCount / $scope.statisticSummary.count * 100;
+                $scope.statisticSummary.rightPersent = Math.round($scope.statisticSummary.rightCount / $scope.statisticSummary.count * 100);
                 $scope.finishMode = true;
             }
             document.querySelectorAll('.classroom input')[0].focus();

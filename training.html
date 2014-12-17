@@ -30,9 +30,9 @@
     </div>
 </form>
 
-<div ng-if="finishMode">
+<div ng-if="finishMode" class="statistics">
     <div class="col-md-4">
-        <div><b>Right answers:</b>&nbsp;{{ statisticSummary.rightPersent }}%</div>
+        <div><b>Right answers:</b>&nbsp;<span ng-class="[statisticSummary.rightPersent >= 75]">{{ statisticSummary.rightPersent }}%</span></div>
 
         <hr>
         <button ng-click="start()" class="btn btn-success">Try again</button>
@@ -48,7 +48,7 @@
         <tbody>
             <tr ng-repeat="(word, status) in statistics">
                 <td ng-bind="word"></td>
-                <td ng-bind="status ? 'Yes' : 'No'"></td>
+                <td ng-class="[status]" ng-bind="status ? 'Yes' : 'No'"></td>
             </tr>
         </tbody>
         </table>

@@ -1,7 +1,14 @@
-classroom input.true {
+.classroom input.true {
     border-color: green;
 }
-classroom input.false {
+.classroom input.false {
     border-color: red;
 }
-classroom input.ng-dirty {}
+.classroom input.ng-dirty {}
+
+.statistics .true {
+	color: green;
+}
+.statistics .false {
+	color: red;
+}
