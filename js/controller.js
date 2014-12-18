@@ -59,6 +59,7 @@ angular
             $scope.lastCheckIncorrect = false;
             $scope.showAnswerMode = false;
             $scope.finishMode = false;
+            $scope.noWordsMode = $scope.words.length == 0;
         };
         $scope.start();
 

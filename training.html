@@ -1,4 +1,8 @@
-<form class="form-inline" ng-if="!finishMode">
+<div ng-if="noWordsMode" class="alert alert-danger" role="alert">
+    You have to select words to learn in "<a href="/">Words</a>" tab
+</div>
+
+<form class="form-inline" ng-if="!finishMode && !noWordsMode">
     <div class="jumbotron">
         <h1 ng-bind="currentWord.translation"></h1>
         <p>
