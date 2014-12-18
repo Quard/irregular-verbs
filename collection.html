@@ -1,6 +1,5 @@
 <div class="btn-group" role="group">
 	<button ng-click="addRow()" class="btn btn-info">add word</button>
-	<button ng-click="save()" class="btn btn-success">save</button>
 	<a href="training/" class="btn btn-warning">start trainging</a>
 </div>
 
@@ -16,17 +15,16 @@
 </thead>
 <tbody>
 	<tr ng-repeat="word in words">
-		<td><input type="checkbox" ng-model="word[4]"></td>
-		<td><input ng-model="word.translation" class="form-control"></td>
-		<td><input ng-model="word.infinitive" class="form-control"></td>
-		<td><input ng-model="word.pastSimple" class="form-control"></td>
-		<td><input ng-model="word.pastParticiple" class="form-control"></td>
+		<td><input type="checkbox" ng-model="word[4]" ng-change="save()"></td>
+		<td><input ng-model="word.translation" ng-change="save()" class="form-control"></td>
+		<td><input ng-model="word.infinitive" ng-change="save()" class="form-control"></td>
+		<td><input ng-model="word.pastSimple" ng-change="save()" class="form-control"></td>
+		<td><input ng-model="word.pastParticiple" ng-change="save()" class="form-control"></td>
 	</tr>
 </tbody>
 </table>
 
 <div class="btn-group" role="group">
 	<button ng-click="addRow()" class="btn btn-info">add word</button>
-	<button ng-click="save()" class="btn btn-success">save</button>
 	<a href="training/" class="btn btn-warning">start trainging</a>
 </div>
